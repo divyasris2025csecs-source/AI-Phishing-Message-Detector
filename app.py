@@ -8,7 +8,7 @@ from datetime import datetime
 import csv
 from io import StringIO
 from flask import Response
-
+import os
 app = Flask(__name__)
 
 # Training dataset
@@ -206,7 +206,8 @@ def export_history():
 
 # Run Flask application
 if __name__ == "__main__":
-    import os
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000)),
+        debug=False
+    )
